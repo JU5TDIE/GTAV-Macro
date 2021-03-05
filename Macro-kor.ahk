@@ -219,6 +219,7 @@ return
 
 NextAmmo:
 Send {Up}{Up}{Enter}{Down}{Down}{Enter}
+return
 
 HideRevealJobs:
 Send, m
@@ -411,7 +412,9 @@ Sleep 70
 ImageSearch,vx,vy,25,137,460,190, *50 pics/ceo-kor.png
 If (Errorlevel = 0)
 {
-    Send {Enter}{Enter}{Right}{Right}{Enter}{Esc}{Esc}{Esc}
+    Send {Enter}{Enter}
+    Sleep 100
+    Send {Right}{Right}{Enter}{Esc}{Esc}{Esc}
     return
 }
 If (Errorlevel = 1)
@@ -419,7 +422,9 @@ If (Errorlevel = 1)
     ImageSearch,vx,vy,25,137,460,190, *50 pics/mcclub-kor.png
     If (Errorlevel = 0)
     {
-        Send {Enter}{Down}{Enter}{Right}{Right}{Enter}{Esc}{Esc}{Esc}
+        Send {Enter}{Down}{Enter}
+        Sleep 100
+        Send {Right}{Right}{Enter}{Esc}{Esc}{Esc}
         return
     }
     If (Errorlevel = 1)
